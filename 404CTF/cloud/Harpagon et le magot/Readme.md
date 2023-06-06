@@ -20,25 +20,25 @@ Mot de passe : T8h2UKEstg
 
 ## Solution
 
-En se connectant au ssh, on se rend compte que l'on est sur une instance Kubernetes.
+En se connectant au ssh, on se rend compte que l'on est sur une instance Kubernetes.  
 ![kubernetes](./kubernetes.png)
 
-On peut voir que l'on a un namespace `cassette` avec un pod `cassette-vaultwarden-0` qui tourne grâce aux commandes : `kubectl get namespaces` et `kubectl get pods -n cassette`
+On peut voir que l'on a un namespace `cassette` avec un pod `cassette-vaultwarden-0` qui tourne grâce aux commandes : `kubectl get namespaces` et `kubectl get pods -n cassette`  
 ![kube_list](./kube_list.png)
 
-Avec un `history`, on voit ce que harpagon a fait sur le serveur.
+Avec un `history`, on voit ce que harpagon a fait sur le serveur.  
 ![history](./history.png)
 
-On se rend notamment compte qu'il a deployé sa cassette depuis un fichier value.yaml présent dans son `$HOME`. On peut donc récupérer ce fichier avec un `cat value.yaml` et on obtient :
+On se rend notamment compte qu'il a deployé sa cassette depuis un fichier value.yaml présent dans son `$HOME`. On peut donc récupérer ce fichier avec un `cat value.yaml` et on obtient :  
 ![secrets_new](./secrets_new.png)
 
-On en déduit que harpagon avait son secret précédement en adminToken mais qu'il l'a déplacé. On sait que le pod a été déployé avec `helm`. On peut donc restaurer l'ancienne version du pod avec : `helm rollback <nom de la release>`. On obtient le nom de la release avec `helm list -n cassette`.
+On en déduit que harpagon avait son secret précédement en adminToken mais qu'il l'a déplacé. On sait que le pod a été déployé avec `helm`. On peut donc restaurer l'ancienne version du pod avec : `helm rollback <nom de la release>`. On obtient le nom de la release avec `helm list -n cassette`.  
 ![release_name](./release_name.png)
 
-Après cela, on récupère les secrets de la pod avec `kubectl get secrets cassette-vaultwarden -o yaml` et cette fois ci, le secret est le flag.
-![flag](./flag.png)
-Il suffit de décoder le flag de la base64 et c'est bon !
-![flag_decoded](./flag_decoded.png)
+Après cela, on récupère les secrets de la pod avec `kubectl get secrets cassette-vaultwarden -o yaml` et cette fois ci, le secret est le flag.  
+![flag](./flag.png)  
+Il suffit de décoder le flag de la base64 et c'est bon !  
+![flag_decoded](./flag_decoded.png)  
 Le flag est écrit à l'envers... Un petit coup de python et c'est bon !
 
-## Flag : 404CTF{l@v4r1c3_3s7_1_fl3@u_d0n7_1l_3s7_vict1me}
+## Flag : `404CTF{l@v4r1c3_3s7_1_fl3@u_d0n7_1l_3s7_vict1me}`

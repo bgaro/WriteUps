@@ -22,12 +22,12 @@ Attention, il s'agit d'une vrai infrastructure cloud, le brute-force est particu
 
 ## Solution
 
-- On accède au Bucket : https://cloud-intro-challenge.s3.gra.io.cloud.ovh.net/
-  ![bucket](./bucket.png)
+- On accède au Bucket : https://cloud-intro-challenge.s3.gra.io.cloud.ovh.net/  
+  ![bucket](./bucket.png)  
   On voit le fichier : les-moutons.json
 
-- On accède donc au fichier : https://cloud-intro-challenge.s3.gra.io.cloud.ovh.net/les-moutons.json
-  ![json](./json.png)
+- On accède donc au fichier : https://cloud-intro-challenge.s3.gra.io.cloud.ovh.net/les-moutons.json  
+  ![json](./json.png)  
   On voit que le fichier contient un tableau de plusieurs moutons avec le flag à la fin.
 
-## Flag : 404CTF{D35_m0utOns_D4n5_13s_NU@g3s}
+## Flag : `404CTF{D35_m0utOns_D4n5_13s_NU@g3s}`

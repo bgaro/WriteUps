@@ -27,4 +27,4 @@ En affichant les variables d'environnement, nous récupérons l'adresse ip de l'
 Nous nous rendons compte que notre utilisateur a des droits très limités mais en testant les différents endpoints, nous tombons sur `/api/v1/secrets` qui nous permet de lister les secrets du cluster et le flag encodé en base64.  
 ![flag](./flag.png)
 
-## Flag : 404CTF{Attention_aux_secrets!}
+## Flag : `404CTF{Attention_aux_secrets!}`

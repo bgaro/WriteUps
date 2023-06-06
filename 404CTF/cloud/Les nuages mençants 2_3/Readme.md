@@ -23,4 +23,4 @@ Grâce à la commande `ip a`, nous récupérons l'ip du pod sur lequel nous nous
 Bingo ! L'adresse 10.42.0.13 possède un port ssh ouvert. Nous nous connectons donc avec les credentials trouvés précédemment. `ssh proust@10.42.0.13`
 Avec un `cat /flag.txt` nous obtenons le flag.
 
-## Flag : 404CTF{A_la_Recherche_De_La_Racine}
+## Flag : `404CTF{A_la_Recherche_De_La_Racine}`

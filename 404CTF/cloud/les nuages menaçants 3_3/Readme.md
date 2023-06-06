@@ -24,7 +24,7 @@ En inspectant le pod, nous nous rendons compte que le dossier `/var/log` de l'h�
 En cherchant un peu sur le web, nous tombons sur divers articles expliquant la vulnérabilité. Il suffit de créer un lien symbolique vers la racine pour pouvoir ainsi lire tout le système de fichier. Problème, nous ne sommes pas root. Nous devons donc trouver un moyen de nous éléver en tant que root.
 
 En analysant les binaires présents dans /bin, nous nous rendons compte que le binaire find a le bit suid d'activé ce qui nous permet de faire apparaître un shell root.  
-![privil](./privil.png)
+![privil](./privil.png)  
 Nous exécutons donc la commande suivante : `find . -exec /bin/sh -p \; -quit` et nous obtenons un shell root.  
 ![root](./root.png)
 
@@ -32,11 +32,11 @@ Nous créons dons le lien symbolique vers la racine et nous pouvons lire le flag
 
 Reste à lire les logs pour trouver le flag. Nous savons que kubectl ne peut lire que les logs d'un container, il nous faut donc passer par l'api kubelet sur un port 10250 pour arriver dans le dossier. En analysant un peu le réseau nous tombons sur la machine 10.42.0.1 qui a un port 10250 d'ouvert.
 
-Bingo, plus qu'à mettre en marche.
+Bingo, plus qu'à mettre en marche.  
 Nous exécutons la commande `curl -H "Authorization: Bearer $TOKEN" --cacert $CRT https://10.42.0.1:10250/logs -k -L`  
-![root_log](./root_log.png)
+![root_log](./root_log.png)  
 Nous voyons bien notre lien tmp, avec la commande `curl -H "Authorization: Bearer $TOKEN" --cacert $CRT https://10.42.0.1:10250/logs/tmp -k -L` nous obtenons la racine et donc le flag.  
-![host_root](./host_root.png)
+![host_root](./host_root.png)  
 ![flag](./flag.png)
 
-## Flag : 404CTF{les_journaux_sont_parfois_traitres}
+## Flag : `404CTF{les_journaux_sont_parfois_traitres}`
