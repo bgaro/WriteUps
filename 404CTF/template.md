@@ -4,4 +4,4 @@
 
 ## Solution
 
-## Flag : FAKEFLAG{FAKEFLAG}
+## Flag : `FAKEFLAG{FAKEFLAG}`
