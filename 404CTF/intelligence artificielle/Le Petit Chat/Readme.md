@@ -60,6 +60,7 @@ chat modifié :
 ![chat_modifie](chat_modifie.png)
 
 Il nous suffit de l'uploader sur un site d'hébergement d'image et de rentrer l'url dans le netcat pour valider le challenge.  
-Le script python utilisé pour réaliser l'attaque et la vérification est disponible dans le fichier `solve.py`.
+Le script python utilisé pour réaliser l'attaque et la vérification est disponible dans le fichier `solve.py`.  
+![flag](flag.png)
 
 ## Flag : `404CTF{qU3l_M4n1f1qu3_the13R3_0r4ng3}`
