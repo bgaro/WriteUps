@@ -25,7 +25,7 @@ def main():
     objective_string = list("pvfdhtuwgbpxfhocidqcznupamzsezp")  # cipher objective
 
     dict_key = gen_key_dict()
-    print(dict_key)
+    print(f"objective : {''.join(objective_string)}")
 
     for i in range(len(objective_string)):
         int_string_i = 30 - i
@@ -49,7 +49,7 @@ def main():
                     + init_string[int_string_i + 2 :]
                 )
 
-        print("".join(init_string), "".join(result_string), "".join(objective_string))
+        print(f'plaintext={"".join(init_string)} ciphertext={"".join(result_string)}')
 
 
 def increment_string(str1, n, dict_key):
