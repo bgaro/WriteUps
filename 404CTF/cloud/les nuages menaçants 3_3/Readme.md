@@ -30,12 +30,9 @@ Nous exécutons donc la commande suivante : `find . -exec /bin/sh -p \; -quit` e
 
 Nous créons dons le lien symbolique vers la racine et nous pouvons lire le flag avec la commande après nous être positionné dans le dossier `/var/host/log` - `ln -s / tmp_link`
 
-Reste à lire les logs pour trouver le flag. Nous savons que kubectl ne peut lire que les logs d'un container, il nous faut donc passer par l'api kubelet sur un port 10250 pour arriver dans le dossier. En analysant un peu le réseau nous tombons sur la machine 10.42.0.1 qui a un port 10250 d'ouvert.
-
-Bingo, plus qu'à mettre en marche.  
-Nous exécutons la commande `curl -H "Authorization: Bearer $TOKEN" --cacert $CRT https://10.42.0.1:10250/logs -k -L`  
+Reste à lire les logs pour trouver le flag. En testant l'ip `10.43.0.1` avec les identifiants trouvés sur la machine de proust, nous nous rendons compte que nous avons encore moins de permission que précédemment et surtout, nous ne pouvons pas lire les logs des pods. En inspectant un peu le réseau nous tombons sur la machine 10.42.0.1 qui a un port 10250 d'ouvert. Nous savons que le port 10250 correspond a une api kubelet et nous exécutons la commande `curl -H "Authorization: Bearer $TOKEN" --cacert $CRT https://10.42.0.1:10250/logs -k -L`  
 ![root_log](./root_log.png)  
-Nous voyons bien notre lien tmp, avec la commande `curl -H "Authorization: Bearer $TOKEN" --cacert $CRT https://10.42.0.1:10250/logs/tmp -k -L` nous obtenons la racine et donc le flag.  
+Nous voyons tous les logs de la machine hôte ainsi que notre lien tmp, avec la commande `curl -H "Authorization: Bearer $TOKEN" --cacert $CRT https://10.42.0.1:10250/logs/tmp -k -L` nous obtenons la racine et donc le flag.  
 ![host_root](./host_root.png)  
 ![flag](./flag.png)
 
