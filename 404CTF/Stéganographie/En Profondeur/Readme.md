@@ -18,10 +18,10 @@ En ouvrant le fichier `En_Profondeur`, on se rend compte que nous avons deux tex
 
 Aucune de ces deux chaînes ne valide le challenge. On se rend cependant compte que des mots présentent les mêmes décalages dans les deux chaînes. On les récupère et on obtient deux chaînes en fonction du sens de décalage :
 
-`ParisFinlande156avion` si on prend les caractères identiques avec un décalage de 1 vers la droite entre les deux chaînes.
+`ParisFinlande156avion` si on prend les caractères identiques avec un décalage de 1 vers la droite entre les deux chaînes. `(texte1[i] == texte2[i+1])`
 
-`Marseile Alemagne1034 voiture` si on prend les caractères identiques avec un décalage de 1 vers la gauche entre les deux chaînes.
+`Marseile Alemagne1034 voiture` si on prend les caractères identiques avec un décalage de 1 vers la gauche entre les deux chaînes.`(texte1[i+1] == texte2[i])`
 
-On sait que Valmont n'a pas le permis B, on teste donc le flag `Paris_Finlande_15_6_avion` qui est le flag.
+On sait que Valmont n'a pas le permis B, on teste donc le flag `Paris_Finlande_15_6_avion` qui valide le challenge.
 
 ## Flag : `404CTF{Paris_Finlande_15_6_avion}`
