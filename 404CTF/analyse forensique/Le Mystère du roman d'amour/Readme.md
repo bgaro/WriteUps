@@ -33,4 +33,34 @@ De plus, en regardant les premiers octets du fichier, on remarque qu'il s'agit d
 
 Nous sauvegardons donc le fichier sous le nom `brouillon.png` et nous obtenons l'image suivante :
 
-## Flag : `FAKEFLAG{FAKEFLAG}`
+<img src="brouillon.png" alt= "brouillon" width="50%" height="50%">
+
+Cependant, l'image ne contient pas le flag. En passant l'image sur apérisolve, on voit que le flag est caché dans les lsb de l'image :
+
+![lsb.png](lsb.png)
+
+En scannant l'image avec un lecteur de qrcode, on obtient :
+
+```text
+Il était une fois, dans un village
+rempli d'amour, deux amoureux qui s'aimaient...
+
+Bien joué ! Notre écrivaine va pouvoir
+reprendre son chef-d'oeuvre grâce à vous!
+Voici ce que vous devez rentrer dans la partie
+"contenu du fichier" du flag : 3n_V01L4_Un_Dr0l3_D3_R0m4N
+```
+
+Pour récupérer le PID du processus craché, nous exécutons simplement un `vim -r` sans préciser le chemin du fichier.
+
+![pid.png](pid.png)
+
+Nous avons désormais toutes les informations nécessaires pour valider le challenge :
+
+- PID du processus crashé : `168`
+- chemin vers le fichier : `~jaqueline/Documents/Livres/404 Histoires d'Amour pour les bibliophiles au coeur d'artichaut/brouillon.txt`
+- nom utilisateur `jaqueline`
+- nom machine `aime_ecrire`
+- contenu du fichier : `3n_V01L4_Un_Dr0l3_D3_R0m4N`
+
+## Flag : `404CTF{168-~jaqueline/Documents/Livres/404 Histoires d'Amour pour les bibliophiles au coeur d'artichaut/brouillon.txt-jaqueline-aime_ecrire-3n_V01L4_Un_Dr0l3_D3_R0m4N}`

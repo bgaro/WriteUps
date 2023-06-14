@@ -30,7 +30,7 @@ A chaque incrémentation de la lettre `n-2`, nous allons ajouter à notre texte 
 
 Exemple d'exécution :
 
-```
+```text
 objective : pvfdhtuwgbpxfhocidqcznupamzsezp
 plaintext=aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaj ciphertext=pebqwvrsmfjujkuppvnsrzeaqtrgqwb
 plaintext=aaaaaaaaaaaaaaaaaaaaaaaaaaaaars ciphertext=pvshnmijdwalablggmejiqvrhkixhns
