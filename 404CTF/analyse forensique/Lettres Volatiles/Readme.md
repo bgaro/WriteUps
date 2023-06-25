@@ -36,7 +36,7 @@ MD5 C311M1N1.zip : a22df7724c02691d12ef1451fb83bf3a
 
 ## Solution
 
-On télécharge le fichier fourni qui est un fichier zip. Ce fichier contient une capture d'un ordinateur Windows. On reconnait l'arborescence avec les `Documents`, `Downloads` etc... En inspectant le dossier `Downloads`, on trouve un fichier `s3cR37.zip` qui nous fait penser au mot `secret`. En essayant de l'ouvrir, on se rend compte qu'il est protégé par un mot de passe. Nous allons donc devoir probablement trouver le mot de passe.
+On télécharge le fichier fourni qui est un fichier zip. Ce fichier contient une capture d'un ordinateur Windows. On reconnait l'arborescence avec les `Documents`, `Downloads` etc... En inspectant le dossier `Downloads`, on trouve un fichier `s3cR37.zip` qui nous fait penser au mot `secret`. En essayant de l'ouvrir, on se rend compte qu'il est protégé par un mot de passe. Après une rapide inspection, aucune trace du mot de passe. Hashcat n'aide pas plus, après près de 1h de bruteforce rien de bien concluant. Nous allons donc devoir probablement trouver le mot de passe.
 
 En inspectant le dossier `Documents`, on se rend compte qu'il y a un fichier `raw`. En l'inspectant avec volatility, on ne trouve rien d'intéressant dans les processus ouverts ou dans les commandes tapées. Mais en regardant dans le presse papier, on voit que le mot de passe est présent.
 
