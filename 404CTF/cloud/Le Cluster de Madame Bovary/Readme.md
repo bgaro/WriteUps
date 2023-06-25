@@ -45,7 +45,7 @@ Nous voyons que le flag a été écrit dans le dossier `my_secret_dir`. Nous pou
 ![flag](flag.png)
 
 Nous avons donc la première partie du flag, il nous faut déployer le pod `web-server` pour avoir la suite du flag. La commande `kubectl run --image 404ctf/web-server web-server`. Nous inspectons les logs de la pod avec la commande `kubectl logs web-server` et nous voyons qu'un webserver est en train de tourner sur le port 8080. Nous récupérons l'ip du pod avec `kubectl get pods -o wide`.  
-[ip](ip.png)
+![ip](ip.png)
 
 Avec un simple curl `curl 10.42.0.34:8080`, nous obtenons l'indication que le flag est dans `/flag`. Nous faisons un second curl pour récupérer le flag `curl 10.42.0.34:8080/flag`.  
 ![flag_end](flag_end.png)
