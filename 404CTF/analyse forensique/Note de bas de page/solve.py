@@ -149,8 +149,28 @@ ihdr += (0).to_bytes(1, "big")  # interlace method
 
 pack_png_chunk(out, b"IHDR", ihdr)
 
+srgb = b""
+srgb += (0).to_bytes(1, "big")  # rendering intent
+
+pack_png_chunk(out, b"sRGB", srgb)
+
+gama = b""
+gama += 0xB18F.to_bytes(4, "big")  # gamma = 1/2.2
+
+pack_png_chunk(out, b"gAMA", gama)
+
+phys = b""
+phys += 0x0EC3.to_bytes(4, "big")  # pixels per unit, X axis
+phys += 0x0EC3.to_bytes(4, "big")  # pixels per unit, Y axis
+phys += (1).to_bytes(1, "big")  # unit specifier: 1 = meter
+
+pack_png_chunk(out, b"pHYs", phys)
+
 # fill missing data with solid magenta
-reconstructed_idat = bytearray((b"\x00" + b"\xff\x00\xff" * orig_width) * orig_height)
+reconstructed_idat = bytearray(
+    (b"\x00" + b"\xff\x00\xff\xff" * orig_width)
+    * orig_height  # Here 4 bytes per pixel since alpha channel is considered (original is \xff\x00\xff)
+)
 
 # paste in the data we decompressed
 reconstructed_idat[-len(decompressed) :] = decompressed
