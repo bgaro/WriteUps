@@ -20,8 +20,8 @@ En parcourant les dossiers, nous arrivons sur la boîte d'envoi avec un message 
 
 ![Capture d’écran 2023-05-07 210840](Capture%20d’écran%202023-05-07%20210840.png)
 
-Ce fichier nous fait particulièrement penser à la CVE `acropalypse` de mars 2023. En inspectant en détail l'image, on se rend compte qu'elle possède deux `chunk` png `IEND`. L'image originale a été écrasée par le recadrage de l'image. En cherchant un peu, on trouve un script python permettant de récupérer l'image originale. Cependant, ce script n'est pas conçu pour les captures windows. Il faut donc modifier le script pour qu'il prenne en compte le cannal alpha de l'image. Le script solution se trouve dans `solve.py`. On se doute que l'image originale a une dimension de `1920*1080` et on peut donc retrouver le flag.
+Ce fichier nous fait particulièrement penser à la CVE `acropalypse` de mars 2023. En inspectant en détail l'image, on se rend compte qu'elle possède deux `chunk` png `IEND`. L'image originale a été écrasée par le recadrage de l'image. En cherchant un peu, on trouve un script python permettant de récupérer l'image originale. Cependant, ce script n'est pas conçu pour les captures windows. Il faut donc modifier le script pour qu'il prenne en compte le cannal alpha de l'image. Le script solution se trouve dans `solve.py`. On se doute que l'image originale a une dimension de `1920*1080` et on peut donc retrouver le flag. (Le fichier affiché n'est pas le vrai fichier solution car github gère mal le channel alpha).
 
-![solution](solution.png)
+![screen_flag](screen_flag.png)
 
 ## Flag : `404CTF{L3_f0rM1d@bl3_p09re35_d3s_lUm13re5}`
