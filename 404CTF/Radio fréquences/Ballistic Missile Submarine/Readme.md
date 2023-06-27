@@ -24,6 +24,10 @@ Nous téléchargeons le fichier `RadioLondres.raw` et l'ouvrons sur Audacity et 
 
 ![Spectrogramme](spectrogram.png)
 
-On remarque une sorte de motif qui se répète. En zoomant sur le motif, on remarque que ce sont soit des traits courts ou longs ce qui fait tout de suite penser à du morse. Nous récupèrons donc le message suivant : `... - .- .-. - .-.-.- ....- ----- ....- -.-. - ..-. .-.-.- .- -.-. -.-. --- .-.. .- -.. . .-.-.- .--. ....- ..- .-.. ..--.- ...- ...-- .-. .---- ....- .. -. ...-- ..--.- ...-- ..... - ..--.- ..- -. ..--.- -- ----- .-. ..... ...-- ..--.- ..--.. .-.-.- .- -.-. -.-. --- .-.. .- -.. . .-.-.- . -. -.. .-.-.-` qui se traduit en `START.404CTF.ACCOLADE.P4UL_V3R14IN3_35T_UN_M0R53_?.ACCOLADE.END.` ce qui nous donne le flag : `404CTF{P4UL_V3R14IN3_35T_UN_M0R53_?}`. Il faut bien faire attention à décoder le message au fur et à mesure car l'audio est assez long et le message se répète plusieurs fois.
+On remarque une sorte de motif qui se répète. En zoomant sur le motif, on remarque que ce sont soit des traits courts ou longs ce qui fait tout de suite penser à du morse.
+
+![zoom](zoom.png)
+
+Nous récupèrons donc le message suivant : `... - .- .-. - .-.-.- ....- ----- ....- -.-. - ..-. .-.-.- .- -.-. -.-. --- .-.. .- -.. . .-.-.- .--. ....- ..- .-.. ..--.- ...- ...-- .-. .---- ....- .. -. ...-- ..--.- ...-- ..... - ..--.- ..- -. ..--.- -- ----- .-. ..... ...-- ..--.- ..--.. .-.-.- .- -.-. -.-. --- .-.. .- -.. . .-.-.- . -. -.. .-.-.-` qui se traduit en `START.404CTF.ACCOLADE.P4UL_V3R14IN3_35T_UN_M0R53_?.ACCOLADE.END.` ce qui nous donne le flag : `404CTF{P4UL_V3R14IN3_35T_UN_M0R53_?}`. Il faut bien faire attention à décoder le message au fur et à mesure car l'audio est assez long et le message se répète plusieurs fois.
 
 ## Flag : `404CTF{P4UL_V3R14IN3_35T_UN_M0R53_?}`
