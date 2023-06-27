@@ -26,15 +26,11 @@ https://github.com/bgaro/WriteUps/assets/47636025/d2402489-d31b-4994-a42d-77022e
 
 On se rend compte qu'il y a un autre audio encore plus ralenti par dessus l'audio original. On va donc accéler encore plus le son pour obtenir cet audio. Pour cela, on multiplie par 5 la vitesse.
 
-
 https://github.com/bgaro/WriteUps/assets/47636025/16e32f3d-6573-4f8b-8978-72463fd57207
-
 
 On entend désormais bien l'autre audio mais il est inversé. Nous appliquons la transformation nécessaire et obtenons le flag. Sur Audacity, il faut aller dans `Effets` > `Inverser sens`.
 
-
 https://github.com/bgaro/WriteUps/assets/47636025/58ef3ba3-c6a3-4872-bdb1-0b4c16de72e5
-
 
 On entends : `Le flag en hexadécimal est 34 30 34 43 54 46 7B 31 74 72 30 5F 34 55 78 5F 52 34 64 31 30 2D 66 52 33 71 55 33 4E 63 33 35 7D`
 
